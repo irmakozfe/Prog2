@@ -1,4 +1,4 @@
-package uebungen.eigene;
+package uebungen.eigene.iostreams;
 
 import java.io.*;
 
@@ -8,8 +8,8 @@ public class FotoKopieren {
 
         //try-with-resources: auto-close
 
-        try(InputStream fis= new FileInputStream("/home/damla/IdeaProjects/Prog2/src/main/java/uebungen/eigene/example.png");
-            OutputStream fos = new FileOutputStream("/home/damla/IdeaProjects/Prog2/src/main/java/uebungen/eigene/copy.png");
+        try(InputStream fis= new FileInputStream("/home/damla/IdeaProjects/Prog2/src/main/java/uebungen/eigene/iostreams/example.png");
+            OutputStream fos = new FileOutputStream("/home/damla/IdeaProjects/Prog2/src/main/java/uebungen/eigene/iostreams/copy.png");
         ) {
             byte[] buffer = new byte[4096];
             int byteRead; //byte sayısı

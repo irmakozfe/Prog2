@@ -1,4 +1,4 @@
-package uebungen.eigene;
+package uebungen.eigene.iostreams;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;

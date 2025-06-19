@@ -1,4 +1,4 @@
-package uebungen.eigene;
+package uebungen.eigene.iostreams;
 
 import java.io.*;
 
@@ -7,7 +7,7 @@ public class VonFileZurKonsole {
         // try-with-resources
 
         try(
-                FileInputStream fis= new FileInputStream("/home/damla/IdeaProjects/Prog2/src/main/java/uebungen/eigene/input.txt");
+                FileInputStream fis= new FileInputStream("/home/damla/IdeaProjects/Prog2/src/main/java/uebungen/eigene/iostreams/input.txt");
                 InputStreamReader isr= new InputStreamReader(fis);
                 BufferedReader br = new BufferedReader(isr);
                 ){
