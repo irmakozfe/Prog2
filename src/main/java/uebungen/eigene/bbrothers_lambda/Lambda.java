@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 public class Lambda {
     public static void main(String[] args) {
@@ -64,6 +65,29 @@ public class Lambda {
       bonus.stream()
               .map(berechneBonus)
               .forEach(ausgabe2);
+
+
+      // -----------------------------------------------------------------------------------
+
+        List<Double> articles = Arrays.asList(10.0, 15.0, 20.0, 50.45, 35.5);
+
+        Function<Double, Double> rabatt  = article -> {
+            if (article > 20) return article * 0.85;
+            else return article;
+        };
+
+        Consumer<Double> ausgabe3 = preise -> System.out.println(preise);
+
+
+        List<Double> warenkorb = articles.stream()
+                .map(rabatt)
+                .collect(Collectors.toList());
+
+        warenkorb.forEach(ausgabe3);
+
+
+
+
 
     }
 }
