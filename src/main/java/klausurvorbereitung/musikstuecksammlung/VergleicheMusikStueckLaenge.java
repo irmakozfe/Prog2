@@ -1,0 +1,14 @@
+package klausurvorbereitung.musikstuecksammlung;
+
+import java.util.Comparator;
+import java.util.List;
+
+public class VergleicheMusikStueckLaenge implements Comparator<MusikStueck> {
+
+@Override
+    public int compare(MusikStueck m, MusikStueck n){
+    return Integer.compare(m.laenge, n.laenge);
+}
+
+
+}
