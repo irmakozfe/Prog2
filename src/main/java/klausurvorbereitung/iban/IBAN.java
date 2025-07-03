@@ -69,10 +69,24 @@ public class IBAN {
 
     public static void main(String[] args) {
         List<String> test = liesIBANAusDatei("/home/damla/IdeaProjects/Prog2/src/main/java/klausurvorbereitung/iban/ibans.txt");
+        List<String> dateien = new ArrayList<>();
+        dateien.add("/home/damla/IdeaProjects/Prog2/src/main/java/klausurvorbereitung/iban/ibans.txt");
+        dateien.add("/home/damla/IdeaProjects/Prog2/src/main/java/klausurvorbereitung/iban/ibans2.txt");
+
+        Map<String, List<String> > test2= liesIbanAusDateien(dateien);
 
         for(String s : test){
             System.out.println(s);
         }
+
+        test2.forEach((datei, ibanListe) -> {
+            System.out.println(datei);
+            System.out.print("");
+            ibanListe.forEach(iban -> System.out.println(iban));
+
+        });
+
+
 
     }
 
