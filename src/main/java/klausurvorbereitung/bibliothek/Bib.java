@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Bib {
     List<Buch> buecher;
@@ -27,6 +28,26 @@ public class Bib {
         return buecher;
     }
 
+    public List<Buch> getBuechermitAuthor(String author) {
+
+        return buecher.stream()
+                .filter(b -> b.author.equalsIgnoreCase(author))
+                .collect(Collectors.toList());
+
+       /* List<Buch> result = new ArrayList<>();
+
+        for(Buch b: buecher){
+            if(author.equalsIgnoreCase(b.author)){
+                result.add(b);
+            }
+        }
+
+        return result;
+    */
+
+    }
+
+
     public static void main(String[] args) {
         Bib bib = new Bib();
 
@@ -45,6 +66,9 @@ public class Bib {
         for(Buch b: bib.sortiereBuecher()) {
             System.out.println(b.name);
         }
+
+        // !!! API Stream çalışması için toString() metodu önemli !!!
+         bib.getBuechermitAuthor("Fujimoto").stream().forEach(name -> System.out.println(name));
     }
 
 }

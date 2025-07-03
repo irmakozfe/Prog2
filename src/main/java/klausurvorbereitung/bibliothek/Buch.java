@@ -1,6 +1,6 @@
 package klausurvorbereitung.bibliothek;
 
-public class Buch {
+public class Buch implements IBuch{
 
     String name;
     String author;
@@ -16,5 +16,20 @@ public class Buch {
         this.seitenzahl = seitenzahl;
     }
 
+    @Override
+
+    public String toString() {
+        return name + " " + author + " " + verlag + " " + PreisInCents + " " + seitenzahl;
+    }
+
+    @Override
+    public String getName(){
+        return name;
+    }
+
+    @Override
+    public String getAuthor(){
+        return author;
+    }
 
 }
