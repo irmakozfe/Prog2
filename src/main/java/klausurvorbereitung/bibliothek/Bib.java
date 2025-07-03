@@ -16,11 +16,13 @@ public class Bib {
     public void reiheHinzufuegen(List<Buch> reihe) {
         for (Buch b : reihe) {
             buecher.add(b);
+            sortiereBuecher();
         }
     }
 
     public void hinzufugen(Buch buch) {
         buecher.add(buch);
+        sortiereBuecher();
     }
 
     public List<Buch> sortiereBuecher() {

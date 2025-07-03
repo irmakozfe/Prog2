@@ -10,8 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BibTest {
 
     @Test
-
-    public void sortierung(){
+    void sortierung(){
         Bib bib = new Bib();
 
         bib.hinzufugen(new Buch("X", "A", "X", 2, 100));
@@ -21,14 +20,14 @@ class BibTest {
         bib.hinzufugen(new Buch("Z", "B", "X", 4, 100));
 
 
-        List<Buch> sortiert= bib.sortiereBuecher();
-        // expected-> AA, XA, XB, ZB, XC
 
-        assertEquals(1, sortiert.get(0).PreisInCents );
-        assertEquals(2, sortiert.get(1).PreisInCents );
-        assertEquals(3, sortiert.get(2).PreisInCents );
-        assertEquals(4, sortiert.get(3).PreisInCents );
-        assertEquals(5, sortiert.get(4).PreisInCents );
+        // expected-> AA, XA, XB, ZB, XC List<Buch> sortiert= bib.sortiereBuecher();
+
+        assertEquals(1, bib.buecher.get(0).PreisInCents );
+        assertEquals(2, bib.buecher.get(1).PreisInCents );
+        assertEquals(3, bib.buecher.get(2).PreisInCents );
+        assertEquals(4, bib.buecher.get(3).PreisInCents );
+        assertEquals(5, bib.buecher.get(4).PreisInCents );
 
 
 
